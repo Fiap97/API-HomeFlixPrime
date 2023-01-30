@@ -33,4 +33,9 @@ public class FilmCategoryController {
 		return filmCategoryService.findByCategoryAndTitle(idCategory, title);
 	}
 	
+	@GetMapping("/{idCategory}")
+	@ResponseStatus(HttpStatus.OK)
+	public List<FilmCategory> findByCategoryAndTitle(@PathVariable Long idCategory ){
+		return filmCategoryService.findByCategory(idCategory);
+	}
 }

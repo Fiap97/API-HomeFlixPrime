@@ -31,7 +31,12 @@ public class FilmCategoryServiceImpl implements FilmCategoryService{
 
 	@Override
 	public List<FilmCategory> findByCategoryAndTitle(Long idCategory, String title) {
-		return filmCategoryRepository.findByCategoryAndTitle(idCategory, title);
+		return filmCategoryRepository.findByCategoryAndTitle(idCategory, title.toUpperCase());
+	}
+
+	@Override
+	public List<FilmCategory> findByCategory(Long idCategory) {
+		return filmCategoryRepository.findByCategory(idCategory);
 	}
 
 }
