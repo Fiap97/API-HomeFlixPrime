@@ -15,4 +15,7 @@ public interface FilmCategoryRepository  extends JpaRepository<FilmCategory,Long
 	@Query(value= "SELECT fc FROM FilmCategory fc WHERE fc.category.category_id = :idCategory and fc.film.title like CONCAT('%',:title,'%')")
 	List<FilmCategory> findByCategoryAndTitle(Long idCategory, String title);
 	
+	@Query(value= "SELECT fc FROM FilmCategory fc WHERE fc.category.category_id = :idCategory")
+	List<FilmCategory> findByCategory(Long idCategory);
+	
 }
